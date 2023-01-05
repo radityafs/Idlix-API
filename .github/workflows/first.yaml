@@ -13,5 +13,11 @@ jobs:
           node-version: "16.x"
       - name: Install dependencies
         run: npm install
-      - name: Run App
-        run: npm start
+      - name: Stop running container
+        run: docker stop my-container
+      - name: Remove running container
+        run: docker container rm api-image
+      - name: Build Image
+        run: docker build --tag api-image .
+      - name: Run Image
+        run: docker run -p 3000:3000 --name api-container my-image
