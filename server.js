@@ -37,6 +37,13 @@ app.use("/api", async (req, res) => {
   });
 });
 
+app.use("/hello", async (req, res) => {
+  res.send({
+    status: true,
+    message: "Hello World",
+  });
+});
+
 app.use("*", async (req, res) => {
   res.status(404).send({ status: false, message: "api not found" });
 });
