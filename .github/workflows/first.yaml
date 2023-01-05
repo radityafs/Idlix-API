@@ -18,7 +18,10 @@ jobs:
         run: docker stop api-container
         continue-on-error: true
       - name: Remove running container
-        run: docker container rm api-image
+        run: docker rm api-container
+        continue-on-error: true
+      - name: Remove image
+        run: docker rmi api-image
         continue-on-error: true
       - name: Build Image
         run: docker build --tag api-image .
