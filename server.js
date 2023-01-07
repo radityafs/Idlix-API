@@ -33,7 +33,7 @@ app.use("/api", async (req, res) => {
   res.send({
     status: true,
     message: "IDLIX Scrapper",
-    repo: "annurdien",
+    repo: "radityafs",
   });
 });
 
