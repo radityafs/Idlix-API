@@ -26,4 +26,4 @@ jobs:
       - name: Build Image
         run: docker build --tag api-image .
       - name: Run Image
-        run: docker container start --name api-container -p 3000:3000 api-image
+        run: docker container start -p 3000:3000 --name api-container api-image
